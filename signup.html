@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Sign Up form</title>
+
+    <meta charset="utf-8" />
+    <link href="signup.css" type="text/css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="form-contaienr">
+      <form action="./index.html">
+        <div>
+          <fieldset>
+            <legend>New User Signup:</legend>
+            <div class="input-container">
+              <div class="input-label">
+                <label for="name">Name:</label>
+              </div>
+              <input type="text" name="name" id="name" />
+            </div>
+            <div class="input-container">
+              <div class="input-label">
+                <label for="email">Email:</label>
+              </div>
+              <input type="email" name="email" id="email" />
+            </div>
+            <div class="input-container">
+              <div class="input-label">
+                <label>Gender:</label>
+              </div>
+              <label for="male">
+                <input id="male" type="radio" name="gender" value="Male" /> Male
+              </label>
+              <label for="female">
+                <input id="female" type="radio" name="gender" value="Female" />
+                Female
+              </label>
+            </div>
+            <div class="input-container">
+              <div class="input-label">
+                <label for="age">Age:</label>
+              </div>
+              <input name="age" id="age" type="text" />
+            </div>
+            <div class="input-container">
+              <div class="input-label">
+                <label for="personality">Personality Type:</label>
+              </div>
+              <input name="personality" id="personality" type="text" />
+              (<a class="warning-message" href="#">Don't know your type?</a>)
+            </div>
+            <div class="input-container">
+              <div class="input-label">
+                <label for="os">Favorite OS:</label>
+              </div>
+              <select name="os" id="os">
+                <option value="Windows">Windows</option>
+                <option value="Mac">Mac</option>
+                <option value="Linux">Linux</option>
+              </select>
+            </div>
+
+            <div class="input-container">
+              <div class="input-label">
+                <label for="minage">Seeking age:</label>
+              </div>
+              <input
+                id="minage"
+                name="seekingAge"
+                type="number"
+                placeholder="min"
+                class="input-sm"
+              />
+              to
+              <input
+                type="number"
+                name="seekingAge"
+                placeholder="max"
+                class="input-sm"
+              />
+            </div>
+          </fieldset>
+          <button type="submit" class="button">Signup</button>
+        </div>
+      </form>
+    </div>
+    <div class="validator">
+      <div>
+        <a
+          href="http://validator.w3.org/nu/check?uri=referer"
+          onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+          ><img src="w3c-html.png" alt="Valid HTML5"
+        /></a>
+        <br />
+        <a
+          href="http://jigsaw.w3.org/css-validator/check/referer"
+          onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+          ><img src="w3c-css.png" alt="Valid CSS"
+        /></a>
+      </div>
+    </div>
+  </body>
+</html>

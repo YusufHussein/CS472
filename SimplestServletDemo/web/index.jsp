@@ -20,6 +20,12 @@
     <li>
       <a href="./BeerSelect" target="_blank">Beer Select</a>
     </li>
+    <li>
+      <a href="./calc.html" target="_blank">Calculator</a>
+    </li>
+    <li>
+      <a href="./calc2" target="_blank">Calculator 2</a>
+    </li>
   </ul>
   </body>
 </html>

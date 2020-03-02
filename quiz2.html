@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Managing State in Servlets</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Managing State in Servlets</h1>
+    <ol>
+      <li>
+        Can post requests be bookmarked? What are the problems?
+        <p>
+          An HTTP POST can be bookmarked, but since a bookmark only consists of
+          the URL, all of the form parameters will be lost. This will often mean
+          that the web server doesn't know what to do with the request, since it
+          was expecting some form parameters. A POST cannot be bookmarked
+        </p>
+      </li>
+      <li>
+        What is the purpose of request dispatching?
+        <p>
+          Request Dispatcher enables to dispatch the request to another
+          resources like HTML, JSP, or Servlet.
+        </p>
+      </li>
+      <li>
+        What is the difference between redirect and request dispatch?
+        <p>
+          Redirect is sent to the client as a response while the request
+          dispatch is performed completely in the server and the result of the
+          forward from the request dispatch is returned as a response to the
+          client.
+        </p>
+      </li>
+      <li>
+        What is an attribute ?
+        <p>
+          An attribute is a variable that you can save in one of the scope of an
+          application. When I say scope, I mean Page, Request, Session,
+          Application. To save the attribute you call the setAttribute() method
+          and to retrieve you call the getAttribute() method
+        </p>
+      </li>
+
+      <li>
+        What is the difference between attributes and parameters?
+
+        <p>
+          parameters are read only, attributes are read/write objects.
+          Parameters are String objects, attributes can be objects of any type.
+        </p>
+      </li>
+
+      <li>
+        What are dangers of using attributes?
+        <p>
+          Use this method when the form has no side-effects and contains only
+          ASCII characters.
+        </p>
+      </li>
+      <li>
+        What does it mean to say that http is stateless? Give an example of a
+        stateful protocol.
+        <p>
+          HTTP protocol does not keep track, or does not have knowledge of the
+          previous requests. An example of a stateful protocol is TCP, in which
+          it keeps track of the packets received in order to be reassemble them
+          at the destination.
+        </p>
+      </li>
+      <li>
+        Give 5 different methods for maintaining state information (count each
+        attribute scope as one method).
+        <p>
+          1. request scope 2. session scope 3. application scope 4. cookies 5.
+          hidden fields
+        </p>
+      </li>
+      <li>
+        How long does a session last?
+        <p>
+          destroyed when user closes browser.
+        </p>
+      </li>
+      <li>
+        What is a cookie, and how long does a cookie last?
+        <p>
+          The duration of a cookie can be set when it is created. By default,
+          the cookie is destroyed when the current browser window is closed.
+        </p>
+      </li>
+      <li>
+        What is the purpose of URL rewriting?
+        <p>
+          URL rewriting is an alternative way of passing the data if the user
+          disables the cookies and also extra form submission is not required on
+          each page.
+        </p>
+      </li>
+      <li>
+        Why does the request attribute report ‘null’ for the maintaining state
+        demo?
+        <p>
+          If the request is completed the request attribute report ‘null’ for
+          the maintaining state demo
+        </p>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>

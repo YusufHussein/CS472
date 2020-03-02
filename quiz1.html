@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Servlet Intro Quiz</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Servlet Intro Quiz</h1>
+    <ol>
+      <li>
+        What is the difference between a web server and a web container?
+        <p>
+          Web server refers to an execution infrastructure that handles HTTP
+          requests and responses. a servlet container refers to a component that
+          handles the lifecycle for servlets. an application server refers to a
+          framework (servlet container, EJB container, JSP engine, MQ container,
+          etc.) for handling Web applications. However, a Web container has a
+          couple of meanings depending on the source. Most refer to a Web
+          container as the part of an application server that manages servlets,
+          JavaServer Pages (JSP) files, and other Web-tier components. Web
+          container is the infrastructure for managing the lifecycle for Web
+          services.
+        </p>
+      </li>
+      <li>
+        What is a servlet?
+        <p>
+          Servlet is a class that handles requests,processes them and reply back
+          with response .for example we can use servlet to collect input from
+          the user through an HTML form,query the records from database and
+          create web page dynamically.
+        </p>
+      </li>
+      <li>
+        How do web servers and web containers interact with servlets?
+        <p>
+          When the client sends a request, the server handles the request to the
+          web container and the web container is the one that needs to search in
+          the list of its servlets if there is one that its url-pattern
+          corresponds to the url request. If it finds one, it leaves to this
+          servlet the responsibility of process the request, if it doesn't find
+          anyone it throws a 404 error.
+        </p>
+      </li>
+      <li>
+        Who creates request objects?
+        <p>
+          Servlet container creates the request and response for servlet.
+        </p>
+      </li>
+
+      <li>
+        What are the states in the servlet lifecycle?
+        <img
+          src="https://www.tutorialspoint.com/servlets/images/servlet-lifecycle.jpg"
+          alt="servlet lifecycle"
+        />
+        <p>
+          1 - Load 2 - Create 3 - Init 4 - Service 5 - Destroy
+        </p>
+      </li>
+
+      <li>
+        Who calls init and when?
+        <p>
+          Servlet container after instantiating the servlet once in the
+          servlet’s lifecycle.
+        </p>
+      </li>
+      <li>
+        Which of init, service, and doGet should you override?
+        <p>
+          Service method should not be overridden otherwise developer is
+          responsible for consequences but init and doGet should be overridden.
+        </p>
+      </li>
+      <li>
+        In what sense are servlets multi-threaded?
+        <p>
+          multiple requests to the same servlet may be executed at the same
+          time. An object instance('s methods) can be called simultaneously by
+          more than one thread. This isn't specific for servlets though and is
+          true in general.
+        </p>
+      </li>
+      <li>
+        What are the implications of this for servlet instance variables?
+        <p>
+          The container does not create a new instance of the Servlet class for
+          each request. It reuses an existing one. This is why they are not
+          thread safe.
+        </p>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>

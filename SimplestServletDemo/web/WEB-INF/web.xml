@@ -23,6 +23,14 @@
         <servlet-name>Calculator2</servlet-name>
         <servlet-class>mum.cs472.Calculator2</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>QuizSession</servlet-name>
+        <servlet-class>mum.cs472.quiz.QuizSession</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SessionServlet</servlet-name>
+        <servlet-class>mum.cs472.quiz.SessionServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimplestServlet</servlet-name>
         <url-pattern>/Simplest</url-pattern>
@@ -42,5 +50,13 @@
     <servlet-mapping>
         <servlet-name>Calculator2</servlet-name>
         <url-pattern>/calc2</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>QuizSession</servlet-name>
+        <url-pattern>/quiz</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SessionServlet</servlet-name>
+        <url-pattern>/session</url-pattern>
     </servlet-mapping>
 </web-app>

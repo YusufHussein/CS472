@@ -26,6 +26,9 @@
     <li>
       <a href="./calc2" target="_blank">Calculator 2</a>
     </li>
+    <li>
+      <a href="./quiz" target="_blank">Quiz</a>
+    </li>
   </ul>
   </body>
 </html>

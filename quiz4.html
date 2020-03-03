@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSP Custom Tags Quiz</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JSP Custom Tags Quiz</h1>
+    <ol>
+      <li>
+        Rewrite the JSP page in the first demo (forEach) to use scripting
+        instead of the JSTL forEach.
+        <p>
+          <% for (Student student : (Student [])
+          request.getAttribute("students")) { %>
+          <tr>
+            <td><%= student.getName() %></td>
+            <td><%= student.getAge() %></td>
+          </tr>
+          <% } %>
+        </p>
+      </li>
+      <li>
+        How do custom tags relate to JSTL?
+        <p>
+          JSTL is a standard library of JSP actions, and JSP allow us to create
+          our own actions, that you call custom tags.
+        </p>
+      </li>
+      <li>
+        What is the role of the URI in the TLD and the taglib directive?
+        <p>
+          The URI attribute defines the url where the tags are located. The tab
+          lib will try to find the tags declaration in the url.
+        </p>
+      </li>
+      <li>
+        What is a tag handler class?
+        <p>
+          Tag handler class are the classes where We have to define the tag and
+          its actions. TagSupport is the base class used for simple tags. This
+          class can be found in the javax.servlet.jsp.tagext package.
+        </p>
+      </li>
+      <li>
+        What is the role of attribute setters in a tag handler class?
+        <p>
+          Make the binds between the tag handler class and the jsp file.
+        </p>
+      </li>
+
+      <li>
+        What is the role of the doTag() method in a tag handler class?
+        <p>
+          Defining what the tag definition (defining the purpose of the custom
+          tag prefix).
+        </p>
+      </li>
+      <li>
+        What does the operation getJspContext().getOut().write(“Hi Bob”) do when
+        called in a doTag() method?
+        <p>
+          This method will get the current Output Writer from the current
+          context and writes "Hi Bob";
+        </p>
+      </li>
+      <li>
+        What does the operation getJspBody().invoke(null) do when called in a
+        doTag() method?
+        <p>
+          This will get the body of custome tag then insert it to output stream
+        </p>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>

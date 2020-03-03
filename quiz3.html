@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>JSP Intro Quiz</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>JSP Intro Quiz</h1>
+    <ol>
+      <li>
+        What is the main value of Java Server Pages?
+        <p>
+          It’s separate the display from processing, in other words, separate
+          html from java.
+        </p>
+      </li>
+      <li>
+        How are JSP pages related to servlets?
+        <p>
+          JSP pages are servlets. When you run your application, the web
+          container is going to compile JSP pages into servlet.
+        </p>
+      </li>
+      <li>
+        How are JSP pages related to HTML?
+        <p>
+          JSP can have html parts in the JSP page and it can be mixed with java
+          code using expression languages, directives and tags.
+        </p>
+      </li>
+      <li>
+        Give an example of a JSP scriptlet and show how it will look in the JSP
+        servlet
+        <p>
+          JSP scriplet: ------------- <% String greeting = "Hello World"; %> JSP
+          servlet: ------------ String greeting = "Hello World"; greeting is a
+          local variable;
+        </p>
+      </li>
+      <li>
+        Give an example of a JSP declaration and show how it will look in the
+        JSP servlet.
+        <p>
+          - <%! int count = 0;%> These are declared as instance variables in the
+          JSP Servlet.
+        </p>
+      </li>
+
+      <li>
+        Give an example of a JSP comment and show how it will look in the JSP
+        servlet.
+        <p>
+          The example of comments in JSP looks like: <%-- comment --%>
+        </p>
+      </li>
+      <li>
+        Give an example of a JSP expression and show how it will look in the JSP
+        servlet
+        <p>
+          <%= i*j+i %> The expression above will be compiled to the following in
+          JSP servlet: out.print(i*j+i);
+        </p>
+      </li>
+      <li>
+        Give an example of a JSP directive and show how it will look in the JSP
+        servlet.
+        <p>
+          <%@page import="mum.cs472.*" %> The directive above will be compiled
+          to a proper import statement in the JSP servlet like: import
+          mum.cs472.*
+        </p>
+      </li>
+      <li>
+        Explain how an EL expression is evaluated.
+        <p>
+          The servlet container will check on the page scope for that attribute
+          and if find will print that attribute in the page html. If not found
+          will check the request scope, session scope and application.
+        </p>
+      </li>
+      <li>
+        Explain how servlet attributes are involved in EL expressions.
+        <p>
+          If our servlet set the attributes in any scope (request, session etc),
+          the attribute can be accessed inside the JSP by the name only without
+          mentioning the scopes (scopes are implicit for the JSP) .
+        </p>
+      </li>
+      <li>
+        Explain how servlets and JSPs use request dispatch to interact.
+        <p>
+          Servlets handles the business logic and set attributes. After which,
+          it forwards the request using a request dispatch to JSP.
+        </p>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>

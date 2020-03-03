@@ -29,6 +29,12 @@
     <li>
       <a href="./quiz" target="_blank">Quiz</a>
     </li>
+    <li>
+      <a href="./jspIntroServlet" target="_blank">JSPIntroDemo</a>
+    </li>
+    <li>
+      <a href="./chooseServlet" target="_blank">Choose</a>
+    </li>
   </ul>
   </body>
 </html>

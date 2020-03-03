@@ -31,6 +31,14 @@
         <servlet-name>SessionServlet</servlet-name>
         <servlet-class>mum.cs472.quiz.SessionServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ChooseServlet</servlet-name>
+        <servlet-class>mum.cs472.jsp.ChooseServlet</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>JSPIntroServlet</servlet-name>
+        <servlet-class>mum.cs472.jsp.JSPIntroServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimplestServlet</servlet-name>
         <url-pattern>/Simplest</url-pattern>
@@ -58,5 +66,13 @@
     <servlet-mapping>
         <servlet-name>SessionServlet</servlet-name>
         <url-pattern>/session</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ChooseServlet</servlet-name>
+        <url-pattern>/chooseServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JSPIntroServlet</servlet-name>
+        <url-pattern>/jspIntroServlet</url-pattern>
     </servlet-mapping>
 </web-app>

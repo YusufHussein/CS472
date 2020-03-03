@@ -35,6 +35,9 @@
     <li>
       <a href="./chooseServlet" target="_blank">Choose</a>
     </li>
+    <li>
+      <a href="./hintServlet" target="_blank">JSP Quiz</a>
+    </li>
   </ul>
   </body>
 </html>

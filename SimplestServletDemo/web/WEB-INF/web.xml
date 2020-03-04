@@ -51,6 +51,10 @@
         <servlet-name>TableServlet</servlet-name>
         <servlet-class>mum.cs472.customtag.TableServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>BeerSelect2</servlet-name>
+        <servlet-class>mum.cs472.BeerSelect2</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimplestServlet</servlet-name>
         <url-pattern>/Simplest</url-pattern>
@@ -98,5 +102,9 @@
     <servlet-mapping>
         <servlet-name>TableServlet</servlet-name>
         <url-pattern>/tableServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>BeerSelect2</servlet-name>
+        <url-pattern>/BeerSelect2Servlet</url-pattern>
     </servlet-mapping>
 </web-app>

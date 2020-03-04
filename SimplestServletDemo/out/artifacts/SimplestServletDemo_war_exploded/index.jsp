@@ -41,6 +41,9 @@
     <li>
       <a href="./tableServlet" target="_blank">JSP Custom Tags Demo</a>
     </li>
+    <li>
+      <a href="./beerSelect2.jsp" target="_blank">Beer Select JSTL</a>
+    </li>
   </ul>
   </body>
 </html>

@@ -47,6 +47,10 @@
         <servlet-name>HintServlet</servlet-name>
         <servlet-class>mum.cs472.quiz.HintServlet</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>TableServlet</servlet-name>
+        <servlet-class>mum.cs472.customtag.TableServlet</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>SimplestServlet</servlet-name>
         <url-pattern>/Simplest</url-pattern>
@@ -90,5 +94,9 @@
     <servlet-mapping>
         <servlet-name>HintServlet</servlet-name>
         <url-pattern>/hintServlet</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>TableServlet</servlet-name>
+        <url-pattern>/tableServlet</url-pattern>
     </servlet-mapping>
 </web-app>

@@ -38,6 +38,9 @@
     <li>
       <a href="./hintServlet" target="_blank">JSP Quiz</a>
     </li>
+    <li>
+      <a href="./tableServlet" target="_blank">JSP Custom Tags Demo</a>
+    </li>
   </ul>
   </body>
 </html>

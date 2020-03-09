@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript Timer Exercises</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript Timer Exercises</h1>
+    <ol>
+      <li>
+        What is the difference between the following 2 statements?
+        <p>
+          The first booyah function will execute after 2 seconds, while the
+          second booyah function will execute immediately.
+        </p>
+      </li>
+      <li>
+        What do the following 2 alerts display (answer without running the
+        code)?
+        <ul>
+          <li>alert(x): alerts 6</li>
+
+          <li>alert(y(2,3)): alerts 6</li>
+        </ul>
+        <br />
+      </li>
+      <li>
+        Write functions booyah1 and booyah2 so that in both cases below, an
+        alert box comes up after 2 seconds that says “BOOYAH!”
+        <pre>
+          function booyah1(){
+              var msg = "BOOYAH";
+              alert(msg);
+          }
+              
+          function booyah2(){
+              setTimeout(booyah1, 2000);        
+          }
+        </pre>
+        <br />
+      </li>
+      <li>
+        What is "Unobtrusive Javascript"? What is the practical application of
+        Unobtrusive Javascript (and the reasons for using it)?
+        <p>
+          Unobstructive Javascript is a Javascript code that is not embedded
+          (separated) from the HTML code. The Javascript code can only be
+          attached at the head of the HTML by using the script tag.
+        </p>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>

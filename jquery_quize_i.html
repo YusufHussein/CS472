@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>jQuery Quiz I</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>jQuery Quiz I</h1>
+    <ol>
+      <li>
+        In jQuery terminology, what is the difference between the “jQuery
+        function” and the “jQuery object”?
+        <p>
+          The jQuery function is the value of jQuery or of $. This is the
+          function that creates jQuery objects and register handlers to be
+          invoked when the DOM is ready. It also serves jquery as namespace. A
+          JQuery object is an object returned by the jQuery function.
+        </p>
+      </li>
+      <li>
+        Write jQuery code to find all h1 elements that are children of a div
+        element and make their background color red. Sample HTML:
+        <pre>
+          &lt;body&gt;
+            &lt;h1&gt;abc&lt;/h1&gt;&lt;br&gt;&lt;div&gt;
+            &lt;h1&gt;div-1&lt;/h1&gt;
+            &lt;h1&gt;div-2&lt;/h1&gt;
+            &lt;/div&gt;
+            &lt;h1&gt;xyz&lt;/h1&gt;
+          &lt;/body&gt;
+        </pre>
+        <p>
+          $("div h1").css("background-color", "red");
+        </p>
+      </li>
+      <li>
+        Use a jQuery method to insert the text "YES!" at the end of the element.
+        <pre>
+          &lt;!DOCTYPE html&gt;
+          &lt;html&gt;
+          &lt;head&gt;
+          &lt;script&gt;
+          $("p").append("YES!");
+          &lt;/script&gt;
+          &lt;/head&gt;
+          &lt;body&gt;
+          &lt;p&gt;Is jQuery FUN or what? &lt;/p&gt;
+          &lt;/body&gt;
+          &lt;/html&gt;
+        </pre>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>

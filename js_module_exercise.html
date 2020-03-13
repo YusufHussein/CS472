@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript Module Exercises</title>
+    <style>
+      li {
+        font-weight: bold;
+      }
+      li > p {
+        font-weight: normal;
+      }
+      li > img {
+        float: right;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Javascript Module Exercises</h1>
+    <ol>
+      <li>
+        Determine what this Javascript code will print out (without running it):
+        <p>undefined 8 8 9 10 1</p>
+      </li>
+      <li>
+        Define Global Scope and Local Scope in Javascript
+        <p>
+          When we say Global Scope we say the implicit window object scope. When
+          we say Local Scope we mean the scope between the bracket of a
+          function.
+        </p>
+      </li>
+      <li>
+        Consider the following structure of Javascript code:
+        <pre>
+          // Scope A
+          function XFunc () {
+            // Scope B
+            function YFunc () {
+              // Scope C
+            };
+          };
+        </pre>
+        <br />
+        <ol type="a">
+          <li>
+            No
+          </li>
+          <li>
+            Yes
+          </li>
+          <li>
+            No
+          </li>
+          <li>
+            Yes
+          </li>
+          <li>Yes</li>
+        </ol>
+      </li>
+      <li>
+        What will be printed by the following (answer without running it)?
+        <pre>
+          var x = 9;
+          function myFunction() {
+            return x * x;
+          }
+          document.write(myFunction());
+          x = 5;
+          document.write(myFunction());
+        </pre>
+        <p>8125</p>
+      </li>
+      <li>
+        <pre>
+          var foo = 1;
+          function bar() {
+            if (!foo) {
+              var foo = 10;
+            }
+            alert(foo);
+          }
+          bar();
+        </pre>
+        What will the alert print out? (Answer without running the code.
+        Remember ‘hoisting’.)?
+        <p>Alert with 10.</p>
+      </li>
+      <li>
+        Consider the following definition of an add( ) function to increment a
+        counter variable:
+        <br />
+        <pre>
+          var add = (function () {
+            var counter = 0;
+            return function () {
+              return counter += 1;
+              }
+             })();
+        </pre>
+        <br />
+        Modify the above module to define a count object with two methods: add(
+        ) and reset( ). The count.add( ) method adds one to the counter (as
+        above). The count.reset( ) method sets the counter to 0.
+        <pre>
+          var count = (function () {
+            var counter = 0;
+            return {
+                add: function () {
+                    counter += 1;
+                },
+                reset: function () {
+                    return counter;
+                }
+            };
+        })();
+        </pre>
+      </li>
+      <li>
+        In the definition of add( ) shown in question 6, identify the "free"
+        variable. In the context of a function closure, what is a "free"
+        variable?
+        <p>
+          Free variables are simply the variables that are neither locally
+          declared nor passed as parameter. the free variable was the counter;
+        </p>
+      </li>
+      <li>
+        The add( ) function defined in question 6 always adds 1 to the counter
+        each time it is called. Write a definition of a function
+        make_adder(inc), whose return value is an add function with increment
+        value inc (instead of 1). Here is an example of using this function:
+        <pre>
+          add5 = make_adder(5);
+          add5( ); add5( ); add5( ); // final counter value is 15
+          add7 = make_adder(7);
+          add7( ); add7( ); add7( ); // final counter value is 21
+        </pre>
+        <br />
+        <pre>
+          var make_addr = (function (addr) {
+            var counter = 0;
+        
+            return function () {
+                counter += addr;
+                return counter;
+            }
+        
+          }());
+        </pre>
+      </li>
+      <li>
+        Suppose you are given a file of Javascript code containing a list of
+        many function and variable declarations. All of these function and
+        variable names will be added to the Global Javascript namespace. What
+        simple modification to the Javascript file can remove all the names from
+        the Global namespace?
+        <p>
+          You can just wrapper up them inside a module pattern and the global
+          scope will not be more aware of them.
+        </p>
+      </li>
+      <li>
+        Using the Revealing Module Pattern, write a Javascript definition of a
+        Module that creates an Employee Object with the following fields and
+        methods:
+        <pre>
+          Private Field: name
+          Private Field: age
+          Private Field: salary
+          Public Method: setAge(newAge)
+          Public Method: setSalary(newSalary)
+          Public Method: setName(newName)
+          Private Method: getAge( )
+          Private Method: getSalary( )
+          Private Method: getName( )
+          Public Method: increaseSalary(percentage) // uses private getSalary( )
+          Public Method: incrementAge( ) // uses private getAge( )
+        </pre>
+        <pre>
+          var employee = (function () {
+              let name;
+              let salary;
+              let age;
+          
+              let getName = function () {
+                  return name;
+              }
+          
+              let getSalary = function(){
+                  return salary;
+              }
+          
+              let getAge = function(){
+                  return age;
+              }
+          
+              let setAge = function (newAge) {
+                  this.age = newAge;
+              }
+          
+              let setSalary = function (newSalary) {
+                  this.salary = newSalary;
+              }
+          
+              let setName = function (newName) {
+                  this.name = newName;
+              }
+          
+              let increaseSalary = function (percetage) {
+                  let newSalary =  getSalary() + (getSalary() * (percetage));
+                  setSalary( salary + (salary * (percetage)));
+              }
+          
+              let incrementAge = function () {
+                  var newAge = getAge();
+                  newAge++;
+                  setAge(newAge);
+              }
+          
+              return {
+                  setAge: setAge,
+                  setName: setName,
+                  setSalary: setSalary,
+                  increaseSalary: increaseSalary,
+                  incrementAge: incrementAge
+              }
+          }());
+          </pre
+        >
+      </li>
+      <li>
+        Rewrite your answer to Question 10 using the Anonymous Object Literal
+        Return Pattern:
+        <pre>
+          var employee = (function () {
+          let name;
+          let salary;
+          let age;
+      
+          let getName = function () {
+              return name;
+          }
+          let getAge = function(){
+              return age;
+          }
+      
+          let setSalary = function (newSalary) {
+              this.salary = newSalary;
+          }
+      
+          return {
+              setAge: function (newAge) {
+                  this.age = newAge;
+              },
+              setName: function (newName) {
+                  this.name = newName;
+              },
+              setSalary: function(){
+                  return salary;
+              },
+              increaseSalary: function (percetage) {
+                  let newSalary =  getSalary() + (getSalary() * (percetage));
+                  setSalary( salary + (salary * (percetage)));
+              },
+              incrementAge: function () {
+                  var newAge = getAge();
+                  newAge++;
+                  setAge(newAge);
+              }
+          }
+      }());
+      
+      
+      </pre
+        >
+      </li>
+      <li>
+        Rewrite your answer to Question 10 using the Locally Scoped Object
+        Literal Pattern
+        <pre>
+          var employee = (function () {
+      
+          var employe = {};
+      
+          let name;
+          let salary;
+          let age;
+      
+          let getName = function () {
+              return name;
+          }
+          let getAge = function () {
+              return age;
+          }
+      
+          let getSalary = function () {
+              return salary;
+          }
+      
+      
+          employee.setAge = function (newAge) {
+              this.age = newAge;
+          };
+          employee.setName = function (newName) {
+              this.name = newName;
+          };
+          employee.setSalary = function () {
+              return salary;
+          };
+          employee.increaseSalary = function (percetage) {
+              let newSalary = getSalary() + (getSalary() * (percetage));
+              setSalary(salary + (salary * (percetage)));
+          };
+          employee.incrementAge = function () {
+              var newAge = getAge();
+              newAge++;
+              setAge(newAge);
+          };
+      
+          return employee;
+      }());    
+      </pre
+        >
+      </li>
+      <li>
+        Write a few Javascript instructions to extend the Module of Question 10
+        to have a public address field and public methods setAddress(newAddress)
+        and getAddress( ).
+        <pre>
+          let adrress;
+          getAddress(){
+              return address;
+          }
+
+          setAddres(newAdress){
+              address = newAdress;
+          }
+        </pre>
+      </li>
+      <li>
+        What is the output of the following code?
+        <pre>
+          const promise = new Promise((resolve, reject) => {
+            reject(“Hattori”);
+            });
+            promise.then(val => alert(“Success: “ + val))
+             .catch(e => alert(“Error: “ + e));
+        </pre>
+        <p>Error: Hattori</p>
+      </li>
+      <li>
+        What is the output of the following code?
+        <pre>
+          const promise = new Promise((resolve, reject) => {
+            resolve(“Hattori”);
+            setTimeout(()=> reject(“Yoshi”), 500);
+            });
+          promise.then(val => alert(“Success: “ + val))
+             .catch(e => alert(“Error: “ + e));
+        </pre>
+        <p>Success: Hattori</p>
+      </li>
+      <li>
+        What is the output of the following code?
+        <pre>
+          function job(state) {
+            return new Promise(function(resolve, reject) {
+              if (state) {
+                resolve('success');
+              } else {
+                reject('error');
+              }
+            });
+           }
+          let promise = job(true);
+          promise.then(function(data) {
+            console.log(data);
+            return job(false);
+          }).catch(function(error) {
+            console.log(error);
+            return 'Error caught';
+           });
+        </pre>
+        <br />
+        <pre>
+          success
+          error
+        </pre>
+      </li>
+    </ol>
+    <a
+      href="http://validator.w3.org/nu/check?uri=referer"
+      onclick="this.href='http://validator.w3.org/check?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-html.png"
+        alt="html validator"
+      />
+    </a>
+    <a
+      href="http://jigsaw.w3.org/css-validator/check/referer"
+      onclick="this.href='http://jigsaw.w3.org/css-validator/validator?uri=' + document.URL"
+    >
+      <img
+        src="http://mumstudents.org/cs472/2013-09/images/w3c-css.png"
+        alt="html validator"
+      />
+    </a>
+  </body>
+</html>
